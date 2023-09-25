@@ -1,0 +1,21 @@
+D:\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe
+D:\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe.config
+D:\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.AssemblyReference.cache
+D:\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormLogin.resources
+D:\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Properties.Resources.resources
+D:\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.GenerateResource.cache
+D:\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.CoreCompileInputs.cache
+D:\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.exe
+D:\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.pdb
+D:\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.pdb
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe.config
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.pdb
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.AssemblyReference.cache
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Properties.Resources.resources
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.GenerateResource.cache
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.CoreCompileInputs.cache
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.exe
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.pdb
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.frmDangNhap.resources
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.frmThanhToan.resources
