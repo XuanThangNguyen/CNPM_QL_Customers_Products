@@ -13,7 +13,7 @@ namespace QL_Customers_Products
 {
     public partial class FormLogin : Form
     {
-        private string connectionString = "Server=;Database=QLKH_SP;User=sa;Password=123;";
+        private string connectionString = "Server=DESKTOP-MH8F2OA;Database=QLKH_SP;User=sa;Password=123;";
         public FormLogin()
         {
             InitializeComponent();
@@ -48,12 +48,12 @@ namespace QL_Customers_Products
 
                     if (userCount > 0)
                     {
-                        FormSanPham formsanpham = new FormSanPham();
-                        formsanpham.ShowDialog();
+                        //FormSanPham formsanpham = new FormSanPham();
+                        //formsanpham.ShowDialog();
                         //Thu thu = new Thu();
                         //thu.ShowDialog();
-                        //Chi chi = new Chi();
-                        //chi.ShowDialog();
+                        Chi chi = new Chi();
+                        chi.ShowDialog();
                         //XuLiNhapHang xl = new XuLiNhapHang();
                         //xl.ShowDialog();
                         this.Hide();

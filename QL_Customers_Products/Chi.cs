@@ -19,7 +19,7 @@ namespace QL_Customers_Products
         {
             InitializeComponent();
         }
-        private string connectionString = "Server=DESKTOP-MH8F2OA;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
+        private string connectionString = @"Data Source =DESKTOP-UE7V70U\SQLEXPRESS;Initial Catalog=QLKH_SP; User ID=sa;Password=123"; // Thay thế bằng chuỗi kết nối của bạn
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
@@ -45,7 +45,8 @@ namespace QL_Customers_Products
                         foreach (DataRow row in dataTable.Rows)
                         {
                             ListViewItem item = new ListViewItem(row["IdNhapHang"].ToString());
-                            item.SubItems.Add(row["IdNhanVien"].ToString());
+                            item.SubItems.Add(row["TenNhanVien"].ToString());
+                            item.SubItems.Add(row["TenNhaCungCap"].ToString());
                             item.SubItems.Add(row["TongTien"].ToString());
                             item.SubItems.Add(row["ThoiGianTao"].ToString());
                             item.SubItems.Add(row["SoLuong"].ToString());
@@ -90,7 +91,8 @@ namespace QL_Customers_Products
             foreach (DataRow row in dataTable.Rows)
             {
                 ListViewItem item = new ListViewItem(row["IdNhapHang"].ToString());
-                item.SubItems.Add(row["IdNhanVien"].ToString());
+                item.SubItems.Add(row["TenNhanVien"].ToString());
+                item.SubItems.Add(row["TenNhaCungCap"].ToString());
                 item.SubItems.Add(row["TongTien"].ToString());
                 item.SubItems.Add(row["ThoiGianTao"].ToString());
                 item.SubItems.Add(row["SoLuong"].ToString());

@@ -25,7 +25,7 @@ namespace QL_Customers_Products
             InitializeComponent();
             this.idHoaDon = idHoaDon;
         }
-        private string connectionString = "Server=DESKTOP-MH8F2OA;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
+        private string connectionString = @"Data Source =DESKTOP-UE7V70U\SQLEXPRESS;Initial Catalog=QLKH_SP; User ID=sa;Password=123"; // Thay thế bằng chuỗi kết nối của bạn
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
@@ -42,7 +42,7 @@ namespace QL_Customers_Products
                 {
                     connection.Open();
                     // Truy vấn danh sách sản phẩm dựa trên IdHoaDon
-                    string query = "SELECT CTHDNH.IdNhapHang,CTHDNH.IdSanPham, SP.TenSanPham, CTHDNH.SoLuong, CTHDNH.GiaNhap,CTHDNH.IdNhaCungCap FROM ChiTietHoaDonNhapHang CTHDNH INNER JOIN SanPham SP ON CTHDNH.IdSanPham = SP.IdSanPham WHERE CTHDNH.IdNhapHang = @IdHoaDon";
+                    string query = "SELECT CTHDNH.IdNhapHang, SP.TenSanPham, CTHDNH.SoLuong, CTHDNH.GiaNhap FROM ChiTietHoaDonNhapHang CTHDNH INNER JOIN SanPham SP ON CTHDNH.IdSanPham = SP.IdSanPham WHERE CTHDNH.IdNhapHang = @IdHoaDon";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@IdHoaDon", idHoaDon);
@@ -52,11 +52,11 @@ namespace QL_Customers_Products
                             while (reader.Read())
                             {
                                 ListViewItem item = new ListViewItem(reader["IdNhapHang"].ToString());
-                                item.SubItems.Add(reader["IdSanPham"].ToString());
+                               
                                 item.SubItems.Add(reader["TenSanPham"].ToString());
                                 item.SubItems.Add(reader["SoLuong"].ToString());
                                 item.SubItems.Add(reader["GiaNhap"].ToString());
-                                item.SubItems.Add(reader["IdNhaCungCap"].ToString());
+                                
                                 listView1.Items.Add(item);
                             }
                         }
@@ -64,6 +64,11 @@ namespace QL_Customers_Products
                     connection.Close();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

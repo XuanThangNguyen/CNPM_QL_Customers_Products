@@ -1,6 +1,7 @@
 ﻿USE master
 GO
-drop DATABASE QLKH_SP
+--Chạy tới bảng hóa đơn,chitiethoadon,nhaphang,chititenhaphang thì đừng chạy insert nên chạy trigger trước r hả insert value dô
+--drop DATABASE QLKH_SP
 go
 
 CREATE DATABASE QLKH_SP
@@ -25,6 +26,7 @@ set dateformat dmy;
 INSERT INTO KhachHang VALUES ('KH001',N'Trần Văn Thân','20/9/2003',N'Nam',N'Q1-Tp.HCM','0981725162','than@gmail.com');
 INSERT INTO KhachHang VALUES ('KH002',N'Trần Thị Nhàn','10/8/2000',N'Nữ',N'Q5-Tp.HCM','0984675166','nhan@gmail.com');
 INSERT INTO KhachHang VALUES ('KH003',N'Lê Thị Mít','8/8/1999',N'Nữ',N'Q.Tân Phú-Tp.HCM','0981725315','mit@gmail.com');
+INSERT INTO KhachHang VALUES ('KH004',N'Trần Dần','8/6/1999',N'Nam',N'Q.Tân Phú-Tp.HCM','098176785','dan@gmail.com');
 --====================================================================================================---
 
 
@@ -127,7 +129,7 @@ INSERT INTO SanPham VALUES ('SP0723000018',N'[ĐÔNG LẠNH] Bò viên Okini 280
 INSERT INTO SanPham VALUES ('SP0723000019',N'Lốc 5 Mì Lẩu Thái Koreno Chua Cay 75G','10','8936028642149-600x600.jpg',40500,0);
 INSERT INTO SanPham VALUES ('SP0723000020',N'Cá Saba Sốt Cà Chua Roza 220G','10','8850511121617-600x600.jpg',41000,0);
 
-ALTER TABLE SanPham
+--ALTER TABLE SanPham
 
 SELECT * FROM SanPham
 
@@ -256,14 +258,15 @@ CREATE TABLE KhoHang
 
 	CREATE TABLE HoaDon (
 	  IdHoaDon VARCHAR(14) NOT NULL,
-	  
+	  IdKhachHang  VARCHAR(12) NOT NULL,
 	  PhuongThucThanhToan NVARCHAR(30) NOT NULL,
 	  
 	  IdNhanVien VARCHAR(12) NOT NULL,
 	  IdQuayThanhToan VARCHAR(5) NOT NULL,
 	  ThoiGianTao DATETIME NOT NULL,
-	  CONSTRAINT PK_DonHang PRIMARY KEY(IdHoaDon),
 	  
+	  CONSTRAINT PK_DonHang PRIMARY KEY(IdHoaDon),
+	  CONSTRAINT FK_HoaDon_KhachHang FOREIGN KEY(IdKhachHang) REFERENCES KhachHang(IdKhachHang),
 	  CONSTRAINT FK_HoaDon_NhanVien FOREIGN KEY(IdNhanVien) REFERENCES NhanVien(IdNhanVien),
 	  CONSTRAINT FK_HoaDon_QuayThanhToan FOREIGN KEY(IdQuayThanhToan) REFERENCES QuayThanhToan(IdQuayThanhToan),
 	  CONSTRAINT FK_HoaDon_ChiTietHD FOREIGN KEY(IdQuayThanhToan) REFERENCES QuayThanhToan(IdQuayThanhToan)
@@ -271,31 +274,31 @@ CREATE TABLE KhoHang
 	select *from HoaDon
 	
 	SET DATEFORMAT DMY
-	INSERT INTO HoaDon VALUES ('HDBH001','Thu','NV07230001','QT1','19/9/2023')
-	INSERT INTO HoaDon VALUES ('HDBH002','Thu','NV07230002','QT1','29/8/2023')
-	INSERT INTO HoaDon VALUES ('HDBH003','Thu','NV07230001','QT2','18/9/2023')
-	INSERT INTO HoaDon VALUES ('HDBH004','Thu','NV07230003','QT1','20/6/2023')
+	INSERT INTO HoaDon VALUES ('HDBH001','KH001','Thu','NV07230001','QT1','19/9/2023')
+	INSERT INTO HoaDon VALUES ('HDBH002','KH002','Thu','NV07230002','QT1','29/8/2023')
+	INSERT INTO HoaDon VALUES ('HDBH003','KH003','Thu','NV07230001','QT2','18/9/2023')
+	INSERT INTO HoaDon VALUES ('HDBH004','KH004','Thu','NV07230003','QT1','20/6/2023')
 
 	CREATE TABLE ChiTietHoaDon (
 	  IdHoaDon VARCHAR(14) NOT NULL,
 	  IdSanPham VARCHAR(12) NOT NULL,
-	  IdKhachHang  VARCHAR(12) NOT NULL,
+	  
 	  SoLuong INT,
 	  GiaBan BIGINT,
-	  CONSTRAINT FK_ChiTietHoaDon_KhachHang FOREIGN KEY(IdKhachHang) REFERENCES KhachHang(IdKhachHang),
+	  
 	  CONSTRAINT PK_ChiTietHoaDon PRIMARY KEY(IdHoaDon, IdSanPham),
 	  CONSTRAINT FK_ChiTietHoaDon_HoaDon FOREIGN KEY(IdHoaDon) REFERENCES HoaDon(IdHoaDon),
 	  CONSTRAINT FK_ChiTietHoaDon_SanPham FOREIGN KEY(IdSanPham) REFERENCES SanPham(IdSanPham),
 	);
 	SET DATEFORMAT DMY
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH001','SP0723000001','KH001',2,NULL)
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH001','SP0723000005','KH001',3,NULL)
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH001','SP0723000013','KH002',1,NULL)
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH002','SP0723000013','KH001',2,NULL)
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH002','SP0723000010','KH003',1,NULL)
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH004','SP0723000010','KH003',1,NULL)
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH004','SP0723000020','KH002',1,NULL)
-	INSERT INTO ChiTietHoaDon VALUES ('HDBH003','SP0723000019','KH001',2,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH001','SP0723000001',2,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH001','SP0723000005',3,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH001','SP0723000013',1,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH002','SP0723000013',2,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH002','SP0723000010',1,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH004','SP0723000010',1,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH004','SP0723000020',1,NULL)
+	INSERT INTO ChiTietHoaDon VALUES ('HDBH003','SP0723000019',2,NULL)
 
 	select*from ChiTietHoaDon
 
@@ -315,97 +318,101 @@ INSERT INTO NhaCungCap VALUES('NCC005',N'Tập đoàn công nghệ Vi',N'Tp.HCM'
 CREATE TABLE NhapHang
 (
     IdNhapHang VARCHAR(12) NOT NULL PRIMARY KEY,
-    IdNhanVien VARCHAR(12) NOT NULL,   
+    IdNhanVien VARCHAR(12) NOT NULL,  
+	IdNhaCungCap VARCHAR(12), 
     TongTien BIGINT ,
 	
 	PhuongThucThanhToan NVARCHAR(30) NOT NULL,
 	ThoiGianTao DATETIME NOT NULL,
-    CONSTRAINT FK_NhapHang_NhanVien FOREIGN KEY (IdNhanVien) REFERENCES NhanVien(IdNhanVien)
-	
+    CONSTRAINT FK_NhapHang_NhanVien FOREIGN KEY (IdNhanVien) REFERENCES NhanVien(IdNhanVien),
+	CONSTRAINT FK_ChiTietHoaDonNhapHang_NhaCungCap FOREIGN KEY (IdNhaCungCap) REFERENCES NhaCungCap(IdNhaCungCap)
 
 );
 SET DATEFORMAT DMY
-INSERT INTO NhapHang VALUES ('HDNH001','NV07230006',NULL,'Chi','17/8/2023')
-INSERT INTO NhapHang VALUES ('HDNH002','NV07230005',NULL,'Chi','1/9/2023')
-INSERT INTO NhapHang VALUES ('HDNH003','NV07230005',NULL,'Chi','15/8/2023')
-INSERT INTO NhapHang VALUES ('HDNH004','NV07230006',NULL,'Chi','10/9/2023')
+INSERT INTO NhapHang VALUES ('HDNH001','NV07230006','NCC001',NULL,'Chi','17/8/2023')
+INSERT INTO NhapHang VALUES ('HDNH002','NV07230005','NCC005',NULL,'Chi','1/9/2023')
+INSERT INTO NhapHang VALUES ('HDNH003','NV07230005','NCC003',NULL,'Chi','15/8/2023')
+INSERT INTO NhapHang VALUES ('HDNH004','NV07230006','NCC004',NULL,'Chi','10/9/2023')
 CREATE TABLE ChiTietHoaDonNhapHang (
   IdNhapHang VARCHAR(12) NOT NULL,
   IdSanPham VARCHAR(12) NOT NULL,
-  IdNhaCungCap VARCHAR(12),
+
   SoLuong INT,
   GiaNhap BIGINT,
-  CONSTRAINT FK_ChiTietHoaDonNhapHang_NhaCungCap FOREIGN KEY (IdNhaCungCap) REFERENCES NhaCungCap(IdNhaCungCap),
+  
   CONSTRAINT PK_ChiTietHoaDonNhapHang PRIMARY KEY(IdNhapHang, IdSanPham),
   CONSTRAINT FK_ChiTietHoaDonNhapHang_NhapHang FOREIGN KEY(IdNhapHang) REFERENCES NhapHang(IdNhapHang),
   CONSTRAINT FK_ChiTietHoaDonNhapHang_SanPham FOREIGN KEY(IdSanPham) REFERENCES SanPham(IdSanPham)
 );
 select*from ChiTietHoaDonNhapHang
 SET DATEFORMAT DMY
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH001','SP0723000001','NCC001',30,390000);
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH001','SP0723000003','NCC001',20,1800000);
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH002','SP0723000013','NCC003',15,5800000);
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH001','SP0723000006','NCC001',32,220000);
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH003','SP0723000004','NCC001',30,1900000);
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH002','SP0723000003','NCC001',30,1800000);
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH004','SP0723000001','NCC001',30,390000);
-INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH004','SP0723000010','NCC004',23,20000000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH001','SP0723000001',30,390000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH001','SP0723000003',20,1800000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH002','SP0723000013',15,5800000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH001','SP0723000006',32,220000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH003','SP0723000004',30,1900000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH002','SP0723000003',30,1800000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH004','SP0723000001',30,390000);
+INSERT INTO ChiTietHoaDonNhapHang VALUES ('HDNH004','SP0723000010',23,20000000);
 
-CREATE TABLE QuangCao (
-	IdQuangCao VARCHAR(12) NOT NULL,
-	TenQuangCao NVARCHAR(255) NOT NULL,
-	MoTaQuangCao NVARCHAR(255),
-	NgayBatDau DATE,
-	NgayKetThuc DATE,
-	IdSanPham VARCHAR(12) NOT NULL,
-	CONSTRAINT PK_QuangCao PRIMARY KEY(IdQuangCao),
-	CONSTRAINT FK_QuangCao_SanPham FOREIGN KEY(IdSanPham) REFERENCES SanPham(IdSanPham)
-);
+--CREATE TABLE QuangCao (
+--	IdQuangCao VARCHAR(12) NOT NULL,
+--	TenQuangCao NVARCHAR(255) NOT NULL,
+--	MoTaQuangCao NVARCHAR(255),
+--	NgayBatDau DATE,
+--	NgayKetThuc DATE,
+--	IdSanPham VARCHAR(12) NOT NULL,
+--	CONSTRAINT PK_QuangCao PRIMARY KEY(IdQuangCao),
+--	CONSTRAINT FK_QuangCao_SanPham FOREIGN KEY(IdSanPham) REFERENCES SanPham(IdSanPham)
+--);
 
-CREATE TABLE ChienDichQuangCao (
-	IdChienDich VARCHAR(12) NOT NULL,
-	TenChienDich NVARCHAR(255) NOT NULL,
-	IdQuangCao VARCHAR(12) NOT NULL,
-	CONSTRAINT PK_ChienDichQuangCao PRIMARY KEY(IdChienDich),
-	CONSTRAINT FK_ChienDichQuangCao_QuangCao FOREIGN KEY(IdQuangCao) REFERENCES QuangCao(IdQuangCao)
-);
+--CREATE TABLE ChienDichQuangCao (
+--	IdChienDich VARCHAR(12) NOT NULL,
+--	TenChienDich NVARCHAR(255) NOT NULL,
+--	IdQuangCao VARCHAR(12) NOT NULL,
+--	CONSTRAINT PK_ChienDichQuangCao PRIMARY KEY(IdChienDich),
+--	CONSTRAINT FK_ChienDichQuangCao_QuangCao FOREIGN KEY(IdQuangCao) REFERENCES QuangCao(IdQuangCao)
+--);
 
-CREATE TABLE ChiTietChienDichQuangCao (
-	IdChiTietChienDich VARCHAR(12) NOT NULL,
-	IdChienDich VARCHAR(12) NOT NULL,
-	KenhQuangCao VARCHAR(12) NOT NULL,
-	SoLuotXem INT,
-	SoLuotClick INT,
-	CONSTRAINT PK_ChiTietChienDichQuangCao PRIMARY KEY(IdChiTietChienDich),
-	CONSTRAINT FK_ChiTietChienDichQuangCao_ChienDichQuangCao FOREIGN KEY(IdChienDich) REFERENCES ChienDichQuangCao(IdChienDich)
-);
+--CREATE TABLE ChiTietChienDichQuangCao (
+--	IdChiTietChienDich VARCHAR(12) NOT NULL,
+--	IdChienDich VARCHAR(12) NOT NULL,
+--	KenhQuangCao VARCHAR(12) NOT NULL,
+--	SoLuotXem INT,
+--	SoLuotClick INT,
+--	CONSTRAINT PK_ChiTietChienDichQuangCao PRIMARY KEY(IdChiTietChienDich),
+--	CONSTRAINT FK_ChiTietChienDichQuangCao_ChienDichQuangCao FOREIGN KEY(IdChienDich) REFERENCES ChienDichQuangCao(IdChienDich)
+--);
 
-CREATE TABLE YkienKH
-(
-	IdFeedback VARCHAR(10) NOT NULL,
-	IdKhachHang VARCHAR(12) NOT NULL,
-	NgayYkien DATE,
-	NDYkien NVARCHAR(150),
-	CONSTRAINT PK_YkienKH PRIMARY KEY(IdFeedback),
-	CONSTRAINT FK_YKienKH_KhachHang FOREIGN KEY(IdKhachHang) REFERENCES KhachHang(IdKhachHang)
-)
+--CREATE TABLE YkienKH
+--(
+--	IdFeedback VARCHAR(10) NOT NULL,
+--	IdKhachHang VARCHAR(12) NOT NULL,
+--	NgayYkien DATE,
+--	NDYkien NVARCHAR(150),
+--	CONSTRAINT PK_YkienKH PRIMARY KEY(IdFeedback),
+--	CONSTRAINT FK_YKienKH_KhachHang FOREIGN KEY(IdKhachHang) REFERENCES KhachHang(IdKhachHang)
+--)
 
 CREATE VIEW BangChi AS
 SELECT 
     NhapHang.IdNhapHang,
-    NhapHang.IdNhanVien,
+    NhanVien.TenNhanVien,
+	NhaCungCap.TenNhaCungCap,
     SUM(ChiTietHoaDonNhapHang.GiaNhap * ChiTietHoaDonNhapHang.SoLuong) AS TongTien,
     NhapHang.ThoiGianTao,
     SUM(ChiTietHoaDonNhapHang.SoLuong) AS SoLuong
 FROM 
-    NhapHang
-INNER JOIN 
-    ChiTietHoaDonNhapHang ON NhapHang.IdNhapHang = ChiTietHoaDonNhapHang.IdNhapHang
+    NhapHang,NhanVien,NhaCungCap,ChiTietHoaDonNhapHang
+where
+	NhapHang.IdNhapHang=ChiTietHoaDonNhapHang.IdNhapHang and NhapHang.IdNhanVien=NhanVien.IdNhanVien and NhapHang.IdNhaCungCap=NhaCungCap.IdNhaCungCap
 GROUP BY 
     NhapHang.IdNhapHang,
-    NhapHang.IdNhanVien,
+    NhanVien.TenNhanVien,
+	NhaCungCap.TenNhaCungCap,
     NhapHang.ThoiGianTao;
-
+select * from BangChi
+select * from ChiTietHoaDonNhapHang
 drop view BangThu
 
 CREATE VIEW BangThu AS
@@ -413,17 +420,18 @@ SELECT
     HoaDon.IdHoaDon,
     SUM(ChiTietHoaDon.GiaBan * ChiTietHoaDon.SoLuong) AS TongTien,
     HoaDon.ThoiGianTao,
-    HoaDon.IdNhanVien,
+    NhanVien.TenNhanVien,
+	KhachHang.TenKhachHang,
     HoaDon.IdQuayThanhToan,
     SUM(ChiTietHoaDon.SoLuong) AS SoLuong
 FROM 
-    HoaDon
-INNER JOIN 
-    ChiTietHoaDon ON HoaDon.IdHoaDon = ChiTietHoaDon.IdHoaDon
+    HoaDon,ChiTietHoaDon,KhachHang,NhanVien
+where HoaDon.IdNhanVien=NhanVien.IdNhanVien and HoaDon.IdHoaDon=ChiTietHoaDon.IdHoaDon and HoaDon.IdKhachHang=KhachHang.IdKhachHang
 GROUP BY 
     HoaDon.IdHoaDon,
     HoaDon.ThoiGianTao,
-    HoaDon.IdNhanVien,
+    NhanVien.TenNhanVien,
+	KhachHang.TenKhachHang,
     HoaDon.IdQuayThanhToan;
 select * from BangThu
 
@@ -441,3 +449,4 @@ BEGIN
 END;
 
 select * from ChiTietHoaDon
+

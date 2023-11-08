@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>QL_Customers_Products</RootNamespace>
     <AssemblyName>QL_Customers_Products</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -47,17 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoDoanhThu.cs" />
     <Compile Include="Chi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Chi.Designer.cs">
       <DependentUpon>Chi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChiTietHDNH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChiTietHDNH.Designer.cs">
-      <DependentUpon>ChiTietHDNH.cs</DependentUpon>
     </Compile>
     <Compile Include="ChiTietHDBH.cs">
       <SubType>Form</SubType>
@@ -65,38 +60,52 @@
     <Compile Include="ChiTietHDBH.Designer.cs">
       <DependentUpon>ChiTietHDBH.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormKhachHang.cs">
+    <Compile Include="ChiTietHDNH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormKhachHang.Designer.cs">
-      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    <Compile Include="ChiTietHDNH.Designer.cs">
+      <DependentUpon>ChiTietHDNH.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPham.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormSanPham.cs">
+    <Compile Include="frmThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSanPham.Designer.cs">
-      <DependentUpon>FormSanPham.cs</DependentUpon>
+    <Compile Include="frmThanhToan.Designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="SharedMethods.cs" />
     <Compile Include="SQLConfig.cs" />
+    <Compile Include="ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Thu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Thu.Designer.cs">
       <DependentUpon>Thu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="XuLiNhapHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XuLiNhapHang.Designer.cs">
-      <DependentUpon>XuLiNhapHang.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Chi.resx">
       <DependentUpon>Chi.cs</DependentUpon>
@@ -107,14 +116,17 @@
     <EmbeddedResource Include="ChiTietHDNH.resx">
       <DependentUpon>ChiTietHDNH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormKhachHang.resx">
-      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSanPham.resx">
-      <DependentUpon>FormSanPham.cs</DependentUpon>
+    <EmbeddedResource Include="frmThanhToan.resx">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,11 +138,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Thu.resx">
       <DependentUpon>Thu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XuLiNhapHang.resx">
-      <DependentUpon>XuLiNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

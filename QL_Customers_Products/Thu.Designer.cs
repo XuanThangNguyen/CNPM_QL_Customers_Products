@@ -46,6 +46,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.button5 = new System.Windows.Forms.Button();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +108,8 @@
             this.columnHeader7,
             this.columnHeader4,
             this.columnHeader6,
-            this.columnHeader1});
+            this.columnHeader1,
+            this.columnHeader5});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
@@ -140,12 +142,12 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Quầy thu";
+            this.columnHeader6.Text = "Khách hàng";
             this.columnHeader6.Width = 146;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Số lượng sản phẩm";
+            this.columnHeader1.Text = "Quầy thu";
             this.columnHeader1.Width = 101;
             // 
             // button1
@@ -208,6 +210,10 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Số lượng SP";
+            // 
             // Thu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,5 +256,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

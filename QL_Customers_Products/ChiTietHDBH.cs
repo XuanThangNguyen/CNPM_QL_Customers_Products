@@ -27,7 +27,7 @@ namespace QL_Customers_Products
             InitializeComponent();
             this.idHoaDon = idHoaDon;
         }
-        private string connectionString = "Server=DESKTOP-MH8F2OA;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
+        private string connectionString = @"Data Source =DESKTOP-UE7V70U\SQLEXPRESS;Initial Catalog=QLKH_SP; User ID=sa;Password=123"; // Thay thế bằng chuỗi kết nối của bạn
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
@@ -49,7 +49,7 @@ namespace QL_Customers_Products
                 {
                     connection.Open();
                     // Truy vấn danh sách sản phẩm dựa trên IdHoaDon
-                    string query = "SELECT CTHD.IdHoaDon,CTHD.IdSanPham, SP.TenSanPham, CTHD.SoLuong, CTHD.GiaBan,CTHD.IdKhachHang FROM ChiTietHoaDon CTHD INNER JOIN SanPham SP ON CTHD.IdSanPham = SP.IdSanPham WHERE CTHD.IdHoaDon = @IdHoaDon";
+                    string query = "SELECT CTHD.IdHoaDon, SP.TenSanPham, CTHD.SoLuong, CTHD.GiaBan FROM ChiTietHoaDon CTHD INNER JOIN SanPham SP ON CTHD.IdSanPham = SP.IdSanPham WHERE CTHD.IdHoaDon = @IdHoaDon";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@IdHoaDon", idHoaDon);
@@ -59,11 +59,11 @@ namespace QL_Customers_Products
                             while (reader.Read())
                             {
                                 ListViewItem item = new ListViewItem(reader["IdHoaDon"].ToString());
-                                item.SubItems.Add(reader["IdSanPham"].ToString());
+                                
                                 item.SubItems.Add(reader["TenSanPham"].ToString());                              
                                 item.SubItems.Add(reader["SoLuong"].ToString());
                                 item.SubItems.Add(reader["GiaBan"].ToString());
-                                item.SubItems.Add(reader["IdKhachHang"].ToString());
+                           
                                 listView1.Items.Add(item);
                             }
                         }

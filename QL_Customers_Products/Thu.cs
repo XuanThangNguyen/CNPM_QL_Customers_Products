@@ -45,7 +45,8 @@ namespace QL_Customers_Products
                 ListViewItem item = new ListViewItem(row["idHoaDon"].ToString());
                 item.SubItems.Add(row["TongTien"].ToString());
                 item.SubItems.Add(row["ThoiGianTao"].ToString());
-                item.SubItems.Add(row["IdNhanVien"].ToString());
+                item.SubItems.Add(row["TenNhanVien"].ToString());
+                item.SubItems.Add(row["TenKhachHang"].ToString());
                 item.SubItems.Add(row["IdQuayThanhToan"].ToString());
                 item.SubItems.Add(row["SoLuong"].ToString());
                 listView1.Items.Add(item);
@@ -94,7 +95,8 @@ namespace QL_Customers_Products
                             ListViewItem item = new ListViewItem(row["idHoaDon"].ToString());
                             item.SubItems.Add(row["TongTien"].ToString());
                             item.SubItems.Add(row["ThoiGianTao"].ToString());
-                            item.SubItems.Add(row["IdNhanVien"].ToString());
+                            item.SubItems.Add(row["TenNhanVien"].ToString());
+                            item.SubItems.Add(row["TenKhachHang"].ToString());
                             item.SubItems.Add(row["IdQuayThanhToan"].ToString());
                             item.SubItems.Add(row["SoLuong"].ToString());
                             listView1.Items.Add(item);

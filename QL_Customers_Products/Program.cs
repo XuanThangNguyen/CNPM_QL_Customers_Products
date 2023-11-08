@@ -16,11 +16,8 @@ namespace QL_Customers_Products
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
-            //Application.Run(new FormKhachHang());
-            //Application.Run(new FormSanPham());
-            //Application.Run(new Thu());
-            //Application.Run(new Chi());
+            //Application.Run(new frmDangNhap());
+            Application.Run(new frmMain());
         }
     }
 }

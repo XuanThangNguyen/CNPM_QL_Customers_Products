@@ -12,39 +12,28 @@ D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Cus
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.pdb
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.AssemblyReference.cache
-D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormLogin.resources
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Properties.Resources.resources
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.GenerateResource.cache
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.CoreCompileInputs.cache
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.exe
 D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.pdb
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe.config
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.pdb
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.AssemblyReference.cache
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormLogin.resources
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Properties.Resources.resources
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.GenerateResource.cache
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.CoreCompileInputs.cache
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.exe
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.pdb
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormKhachHang.resources
-C:\Users\xuanthang\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormSanPham.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe.config
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.pdb
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.AssemblyReference.cache
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.SuggestedBindingRedirects.cache
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormKhachHang.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormLogin.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.FormSanPham.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Properties.Resources.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.GenerateResource.cache
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.CoreCompileInputs.cache
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.exe
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.pdb
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.XuLiNhapHang.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Chi.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Thu.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.ChiTietHDBH.resources
-C:\Users\huuly\Downloads\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.ChiTietHDNH.resources
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.frmDangNhap.resources
+D:\Đồ Án\DotNet\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.frmThanhToan.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe.config
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.exe
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\bin\Debug\QL_Customers_Products.pdb
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.AssemblyReference.cache
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.frmDangNhap.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.frmThanhToan.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Properties.Resources.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.GenerateResource.cache
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.csproj.CoreCompileInputs.cache
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.exe
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.pdb
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Chi.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.ChiTietHDBH.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.ChiTietHDNH.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Thu.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.Home.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.ThongKe.resources
+C:\Users\xuanthang\OneDrive\Máy tính\New folder (3)\QL_Customers_Products\QL_Customers_Products\obj\Debug\QL_Customers_Products.frmMain.resources

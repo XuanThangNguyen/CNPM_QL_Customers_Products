@@ -4,15 +4,17 @@ using System.Data.SqlClient;
 
 public class SQLConfig
 {
-    SqlConnection connection = new SqlConnection("Server=VANANH;Database=QLKH_SP;User Id=sa;Password=123;");
+    SqlConnection connection = new SqlConnection(@"Data Source =DESKTOP-UE7V70U\SQLEXPRESS;Initial Catalog=QLKH_SP; User ID=sa;Password=123");
     //Truy vấn
-    public void ExecuteNonQuery(string query)
+    public bool ExecuteNonQuery(string query)
     {
         try
         {
             connection.Open();
             SqlCommand command = new SqlCommand(query, connection);
-            command.ExecuteNonQuery();
+            int rowsAffected = command.ExecuteNonQuery();
+
+            return rowsAffected > 0;
         }
         catch (SqlException ex)
         {
@@ -26,6 +28,7 @@ public class SQLConfig
         {
             connection.Close();
         }
+        return false;
     }
     // Lấy bảng dữ liệu
     public DataTable ExecuteTableQuery(string query)

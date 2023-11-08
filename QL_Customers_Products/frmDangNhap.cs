@@ -25,6 +25,17 @@ namespace QL_Customers_Products
         {
             txt_Username.Focus();
         }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát?", "Thoát chương trình", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
         public void btn_DangNhap_Click(object sender, EventArgs e)
         {
             try
@@ -38,7 +49,7 @@ namespace QL_Customers_Products
                     if (dataTable.Rows.Count > 0)
                         foreach (DataRow row in dataTable.Rows)
                             frmThanhToan.idNguoiDungHienTai = row["IdNguoiDung"].ToString();
-                    frmThanhToan formThanhToan = new frmThanhToan();
+                    Home formThanhToan = new Home();
                     formThanhToan.Show();
                     this.Hide();
                     

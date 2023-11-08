@@ -45,6 +45,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +95,8 @@
             this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader5});
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
             this.listView2.HideSelection = false;
@@ -117,17 +119,17 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Tổng tiền";
+            this.columnHeader1.Text = "Tên NCC";
             this.columnHeader1.Width = 112;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Ngày tạo";
+            this.columnHeader2.Text = "Tổng tiền";
             this.columnHeader2.Width = 156;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Số lượng nhập";
+            this.columnHeader3.Text = "Ngày tạo";
             this.columnHeader3.Width = 104;
             // 
             // label1
@@ -201,6 +203,11 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Số lượng nhập";
+            this.columnHeader5.Width = 120;
+            // 
             // Chi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,5 +249,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
